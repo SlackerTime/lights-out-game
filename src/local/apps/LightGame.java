@@ -22,12 +22,19 @@ public class LightGame {
 	
 	private JMenu fileMenu;
 	private JMenuItem newAccount;
+	private JMenuItem editAccount;
 	private JMenuItem login;
 	private JMenuItem logout;
 	private JMenuItem exit;
 	
 	private JMenu optionsMenu;
+	private JMenuItem changeTheme;
+	private JMenuItem cheats;
+	
 	private JMenu gameMenu;
+	private JMenuItem startGame;
+	private JMenuItem endGame;
+	private JMenuItem viewRecord;
 	
 	private JPanel mainPanel;
 	
@@ -46,26 +53,55 @@ public class LightGame {
 		//initialize JMenu
 		menuBar = new JMenuBar();
 		
+		//initialize File Menu
 		fileMenu = new JMenu("File");
 		newAccount = new JMenuItem("Create Account");
+		editAccount = new JMenuItem("Edit Account");
 		login = new JMenuItem("Log In");
 		logout = new JMenuItem("Log Out");
 		exit = new JMenuItem("Exit");
 		fileMenu.add(newAccount);
+		fileMenu.add(editAccount);
+		fileMenu.addSeparator();
 		fileMenu.add(login);
 		fileMenu.add(logout);
 		fileMenu.addSeparator();
 		fileMenu.add(exit);
 		menuBar.add(fileMenu);
 		
+		//File Menu Settings
+		logout.setEnabled(false);
+		editAccount.setEnabled(false);
 		
+		//initialize Options menu
 		optionsMenu = new JMenu("Options");
+		changeTheme = new JMenuItem("Theme");
+		cheats = new JMenuItem("Cheats");
+		optionsMenu.add(changeTheme);
+		optionsMenu.add(cheats);
 		menuBar.add(optionsMenu);
 		
+		//Options Menu Settings
+		changeTheme.setEnabled(false);
+		cheats.setEnabled(false);
+		
+		//initialize Game menu
 		gameMenu = new JMenu("Game");
+		startGame = new JMenuItem("New Game");
+		endGame = new JMenuItem("End Game");
+		viewRecord = new JMenuItem("View Record");
+		gameMenu.add(startGame);
+		gameMenu.add(endGame);
+		gameMenu.addSeparator();
+		gameMenu.add(viewRecord);
 		menuBar.add(gameMenu);
 		
+		//Game Menu Settings
+		startGame.setEnabled(false);
+		endGame.setEnabled(false);
+		viewRecord.setEnabled(false);
 		
+		//Add Menu Bar to Frame
 		frame.add(menuBar, BorderLayout.NORTH);
 		
 		
