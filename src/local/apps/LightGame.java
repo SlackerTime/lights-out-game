@@ -101,13 +101,12 @@ public class LightGame {
 		endGame.setEnabled(false);
 		viewRecord.setEnabled(false);
 		
-		//Add Menu Bar to Frame
-		frame.add(menuBar, BorderLayout.NORTH);
-		
-		
 		//initialize JPanel
 		mainPanel = new JPanel();
 		mainPanel.setBackground(new Color(100, 100, 100));
+		
+		//Add everything to the Frame
+		frame.add(menuBar, BorderLayout.NORTH);
 		frame.add(mainPanel);
 	}
 	
